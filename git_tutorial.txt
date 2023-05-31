@@ -1,0 +1,55 @@
+Git and GitHub
+In a nutshell, Git is a control system for the versions of our code. By using git, we can track the progress of our project’s code and track the code changes. 
+Using git, we can easily track down bugs and understand what was developed and when.
+
+Difference between Git and GitHub
+Git is the tool that tracks the changes in the code over time
+GitHub is the service where we host all of our Git repositories. 
+It makes it easy to work in a group with multiple people and organize the code.
+
+Git repository
+A Git repository is a folder place where our project is kept. We can access all the code associated with the project in our repository.
+
+Basic set of commands we use to manipulate git
+
+git clone <url> - It is used to create a copy of the git repository in our local directory.
+git add <file name> - when we create a new file and we want the file to be tracked using git. We add the file using the add command
+git commit - saves the files in git
+git push - Upload the git commits to a remote repository like GitHub
+git pull - Download the changes from the remote repo to the local machine.
+git status - 
+git checkout - 
+git init - 
+
+Setting up git to use in your local machine
+
+Inorder to connect our local machine to GitHub we use an SSH key to prove to GitHub that you are the owner of your account
+Download git from the following site - https://git-scm.com/downloads
+
+Once installed open git bash and run the following commands 
+
+To configure your name and email address in Git to be associated with your Git commits
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+
+To generate a ssh key locally 
+ssh-keygen -t ed25519 -C "your.email@example.com"
+clip < ~/.ssh/id_ed25519.pub
+
+A private (key with no extension) and a public key (key with .pub extension) will be generated and present in the .ssh folder
+You put the public key in GitHub
+Copy the public key and got to GitHub -> settings -> SSH and GPG keys -> New SSH key 
+Paste your key and click Add SSH key  
+
+We need to make sure our local command line knows about this key 
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519 
+ls -al ~/.ssh
+ssh -T git@github.com
+
+
+
+
+
+
+
